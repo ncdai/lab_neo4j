@@ -1,0 +1,14 @@
+services:
+  18120113_neo4j:
+    image: neo4j:latest
+    container_name: 18120113_neo4j
+    ports:
+      - "7474:7474"   # Browser UI
+      - "7687:7687"   # Bolt port
+    environment:
+      - NEO4J_AUTH=neo4j/18120113
+    volumes:
+      - neo4j_data:/data
+
+volumes:
+  neo4j_data:
